@@ -1,0 +1,22 @@
+<h1>Inventory - All Products in our Store</h1>
+<hr>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Price</th>
+    <th></th>
+    <th>Category</th>
+  </tr>
+
+    <% @allproducts.each do |product| %>
+    <tr>
+      <td><%= link_to product.name, product_path(id: product.id)  %></td>
+      <td></td>
+      <td><%= product.price %></td>
+      <td></td>
+      <td><%= link_to product.category, categorized_path(category: product.category)  %></td>
+    <% end %>
+  </tr>
+</table>
